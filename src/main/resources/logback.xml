@@ -16,7 +16,7 @@
      </encoder>
   </appender>
 
-  <logger name="com.jusfoun" level="DEBUG" />
+  <logger name="com.*" level="DEBUG" />
   <logger name="com.apache.ibatis" level="ERROR"/>
   <logger name="org.springframework" level="INFO"/>
   <logger name="org.eclipse.jetty" level="INFO"/>
