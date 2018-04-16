@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.kafka.persistence.CategoryTreeMapper">
+
+    <resultMap type="com.test.kafka.vo.CategoryTree" id="categoryTreeMap">
+        <result property="categoryid" column="categoryid"/>
+        <result property="parentid" column="parentid"/>
+    </resultMap>
+	 
+	<insert id="save" parameterType="com.test.kafka.vo.CategoryTree">
+		insert into category_tree
+		(
+			`categoryid`, 
+			`parentid`
+		)
+		values
+		(
+			#{categoryid},  
+			#{parentid}
+		)
+	</insert>
+	
+	<select id="queryById" resultMap="categoryTreeMap">
+		select categoryid, parentid
+		from category_tree where categoryid = #{categoryid}
+	</select>
+</mapper>

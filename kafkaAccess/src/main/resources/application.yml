@@ -1,0 +1,26 @@
+# Server port
+server:
+  port: 8180
+
+# MySQL config
+spring:
+  profiles:
+        active: test
+  jpa:
+      database: MYSQL
+      show-sql: true
+  #    hibernate:
+  #      ddl-auto: create-drop
+      properties:
+        hibernate:
+          dialect : org.hibernate.dialect.MySQL5Dialect
+  mvc:
+    static-path-pattern: /**
+    favicon:
+      enabled: false
+# Mybatis配置
+mybatis:
+    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+    mapperLocations: classpath:mappings/**/*.xml
+    # 加载全局的配置文件
+    configLocation: classpath:mybatis-config.xml  
