@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:8080:/database?characterEncoding=utf8&useSSL=false&autoReconnect=true&failOverReadOnly=false&autoReconnectForPools=true
     username: root
-    password: jusfoun
+    password: root
     maxActive: 80     #最大活动连接
     initialSize: 10   #初始化连接
     maxIdle: 60       #最大空闲连接
