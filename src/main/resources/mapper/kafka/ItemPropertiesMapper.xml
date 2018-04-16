@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.kafka.persistence.ItemPropertiesMapper">
+
+    <resultMap type="com.test.kafka.vo.ItemProperties" id="itemPropertiesMap">
+        <result property="timestamp" column="timestamp"/>
+        <result property="itemid" column="itemid"/>
+        <result property="property" column="property"/> 
+        <result property="value" column="value"/>
+    </resultMap>
+	 
+	<insert id="save" parameterType="com.test.kafka.vo.ItemProperties">
+		insert into item_properties
+		(
+			`timestamp`, 
+			`itemid`, 
+			`property`, 
+			`value`
+		)
+		values
+		(
+			#{timestamp},  
+			#{itemid},  
+			#{property},    
+			#{value}
+		)
+	</insert>
+
+</mapper>
