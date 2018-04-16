@@ -1,6 +1,6 @@
 # Server port
 server:
-  port: 8180
+  port: 8080
 
 # MySQL config
 spring:
