@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.kafka.persistence.EventMapper">
+
+    <resultMap type="com.test.kafka.vo.Event" id="eventMap">
+        <result property="timestamp" column="timestamp"/>
+        <result property="visitorid" column="visitorid"/>
+        <result property="event" column="event"/>
+        <result property="itemid" column="itemid"/>
+        <result property="transactionid" column="transactionid"/>
+    </resultMap>
+	 
+	<insert id="save" parameterType="com.test.kafka.vo.Event">
+		insert into event
+		(
+			`timestamp`, 
+			`visitorid`, 
+			`event`, 
+			`itemid`, 
+			`transactionid`
+		)
+		values
+		(
+			#{timestamp},  
+			#{visitorid},  
+			#{event},  
+			#{itemid},  
+			#{transactionid}
+		)
+	</insert>
+
+</mapper>

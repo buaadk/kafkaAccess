@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.kafka.persistence.ProgressMapper">
+
+    <resultMap type="com.test.kafka.vo.Progress" id="progressMap">
+        <result property="tableName" column="tableName"/>
+        <result property="num" column="num"/>
+    </resultMap>
+	 
+	<insert id="save" parameterType="com.test.kafka.vo.Progress">
+		insert into progress
+		(
+			`tableName`, 
+			`num`
+		)
+		values
+		(
+			#{tableName},  
+			#{num}
+		)
+	</insert>
+	
+	<select id="queryByTableName" resultMap="progressMap">
+		select tableName, num
+		from progress where tableName = #{tableName}
+	</select>
+</mapper>
